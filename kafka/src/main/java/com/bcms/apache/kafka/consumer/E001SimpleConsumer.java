@@ -34,8 +34,8 @@ public class E001SimpleConsumer {
      * Embora a maneira acima funcione, é claro que ninguém faz isso, a forma correta é:
      * Obs.: Aqui pode usar o id, pois o spring cria para vc o id=groupA-0, id=groupA-1
      */
-    @KafkaListener(id = "groupA", topics = "topic2", concurrency = "2")
-    public void listen3(String input) {
-        System.out.println(input);
-    }
+//    @KafkaListener(id = "groupA", topics = "topic2", concurrency = "2")
+//    public void listen3(String input) {
+//        System.out.println(input);
+//    }
 }
