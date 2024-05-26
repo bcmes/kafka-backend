@@ -60,7 +60,7 @@ public class E001GenerateTopic {
 //    }
 
     /**
-     * If the topic is configured to use CREATE_TIME, the user-specified timestamp is recorded
+     * If the topic is configured to use CREATE_TIME, the default, the user-specified timestamp is recorded
      * (or generated if not specified). If the topic is configured to use LOG_APPEND_TIME,
      * the user-specified timestamp is ignored and the broker adds in the local broker time.
      */
