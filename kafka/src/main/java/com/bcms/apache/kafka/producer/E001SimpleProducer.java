@@ -21,6 +21,9 @@ import java.time.temporal.TemporalField;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 @Configuration
 public class E001SimpleProducer {
@@ -127,4 +130,26 @@ public class E001SimpleProducer {
 //        log.info("Fim do método");
 //        return null;
 //    }
+
+    /**
+     * Existe uma forma sincrona de enviar e aguardar a resposta do commit. Util para testes
+     */
+//    @Bean
+//    public Void send(KafkaTemplate<String, String> kafkaTemplate) {
+//        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("topic3", null, Instant.EPOCH.getEpochSecond(), "key-1", "any-data");
+//        try {
+//            kafkaTemplate.send(producerRecord).get(10, TimeUnit.SECONDS); //se nao responder no tempo determinado dá erro
+//            //todo handleSuccess(data);
+//        }
+//        catch (ExecutionException e) {
+//            //todo handleFailure(data, record, e.getCause());
+//        }
+//        catch (TimeoutException | InterruptedException e) {
+//            //todo handleFailure(data, record, e);
+//        }
+//        log.info("Fim do método");
+//        return null;
+//    }
 }
+
+//RoutingKafkaTemplate : para usar o mesmo producer com varios serializers diferentes, que são selecionados conforme o tópico no envio do KafkaTemplate

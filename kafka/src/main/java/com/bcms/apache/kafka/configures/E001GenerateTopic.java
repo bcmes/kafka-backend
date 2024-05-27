@@ -17,30 +17,31 @@ public class E001GenerateTopic {
     /**
      * Antigamente era feito através do bean do KafkaAdmin. Por debaixo dos panos, ele usa AdminClient.
      */
-    @Bean
-    public NewTopic topic1() {
-        return TopicBuilder.name("topic3")
-                .partitions(10)
-                .replicas(1)
-                .compact()
-                .build();
-    }
+//    @Bean
+//    public NewTopic topic1() {
+//        return TopicBuilder.name("topic3")
+//                .partitions(10)
+//                .replicas(1)
+//                .compact()
+//                .build();
+//    }
 
     /**
      * Registrando vários tópicos de uma vez.
      */
-//    @Bean
-//    public KafkaAdmin.NewTopics topics456() {
-//        return new KafkaAdmin.NewTopics(
-//                TopicBuilder.name("defaultBoth")
-//                        .build(),
-//                TopicBuilder.name("defaultPart")
-//                        .replicas(1)
-//                        .build(),
-//                TopicBuilder.name("defaultRepl")
-//                        .partitions(3)
-//                        .build());
-//    }
+    @Bean
+    public KafkaAdmin.NewTopics topics456() {
+        return new KafkaAdmin.NewTopics(
+                TopicBuilder.name("topic01")
+                        .partitions(3)
+                        .build(),
+                TopicBuilder.name("topic02")
+                        .partitions(3)
+                        .build(),
+                TopicBuilder.name("topic03")
+                        .partitions(3)
+                        .build());
+    }
 
     /**
      * Registrando um bean KafkaAdmin
