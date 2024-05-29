@@ -53,14 +53,14 @@ public class E001SimpleConsumer {
     /**
      * Consome mensagens de um tópico e responde para outro tópico
      */
-    @KafkaListener(id = "recebe-responde", topics = "topic01")
-    @SendTo
-    public Message<?> messageReturn(String event) {
-        log.info("Mensagem [{}] recebida e processada...", event);
-        return MessageBuilder.withPayload(event)
-                .setHeader(KafkaHeaders.TOPIC, "topic02")
-                .setHeader(KafkaHeaders.KEY, "key-1")
-                .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
-                .build();
-    }
+//    @KafkaListener(id = "recebe-responde", topics = "topic01")
+//    @SendTo
+//    public Message<?> messageReturn(String event) {
+//        log.info("Mensagem [{}] recebida e processada...", event);
+//        return MessageBuilder.withPayload(event)
+//                .setHeader(KafkaHeaders.TOPIC, "topic02")
+//                .setHeader(KafkaHeaders.KEY, "key-1")
+//                .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
+//                .build();
+//    }
 }

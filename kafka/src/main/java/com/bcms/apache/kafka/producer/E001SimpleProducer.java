@@ -33,10 +33,10 @@ public class E001SimpleProducer {
     /**
      * Para gerar esse bean, o return precisa ser executado, e ao fazer isso, publicamos uma mensagem no Kafka.
      */
-//    @Bean
-//    public CompletableFuture<SendResult<String, String>> send(KafkaTemplate<String, String> template) {
-//        return template.send("topic1", "message-test-1");
-//    }
+    @Bean
+    public CompletableFuture<SendResult<String, String>> send(KafkaTemplate<String, String> template) {
+        return template.send("topic1", "message-test-1");
+    }
 
     /**
      * O send é assincrono = nova thread.
