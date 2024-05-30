@@ -64,3 +64,5 @@ public class E001SimpleConsumer {
 //                .build();
 //    }
 }
+
+//existe um RecordInterceptor para os consumidores, mas tou sem ideia de para que poderia usa-lo no momento !

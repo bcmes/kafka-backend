@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.UUID;
 
+//veja que ele nao precisa ser um bean, pois apenas será setado nos .properties
 public class MyProducerInterceptor implements ProducerInterceptor<String, String> {
 
     //estou interceptando e manipulando o record, antes do envio ao broker.
