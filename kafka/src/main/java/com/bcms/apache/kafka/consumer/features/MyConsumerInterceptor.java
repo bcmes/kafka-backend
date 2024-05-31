@@ -1,0 +1,38 @@
+package com.bcms.apache.kafka.consumer.features;
+
+import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.listener.RecordInterceptor;
+
+
+@Configuration
+public class MyConsumerInterceptor {
+
+    private final Logger log = LoggerFactory.getLogger(MyConsumerInterceptor.class);
+
+    //implementando RecordInterceptor
+    public RecordInterceptor<String, String> recordInterceptor() {
+        return new RecordInterceptor<String, String>() {
+            @Override
+            public ConsumerRecord<String, String> intercept(ConsumerRecord<String, String> record, Consumer<String, String> consumer) {
+                log.info("Interceptamos o registro [{}] antes do @KafkaListener", record.value());
+                return record;
+            }
+        };
+    }
+
+    //vai funcionar como global para todos os @KafkaListener, vc informando ou não a propriedade do @KafkaListener(containerFactory = "kafkaListenerContainerFactory")
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(ConsumerFactory<String, String> consumerFactory) {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory);
+        factory.setRecordInterceptor(recordInterceptor());
+        return factory;
+    }
+}
