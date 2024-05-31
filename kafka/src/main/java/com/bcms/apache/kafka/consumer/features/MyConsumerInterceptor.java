@@ -22,7 +22,7 @@ public class MyConsumerInterceptor {
             @Override
             public ConsumerRecord<String, String> intercept(ConsumerRecord<String, String> record, Consumer<String, String> consumer) {
                 log.info("Interceptamos o registro [{}] antes do @KafkaListener", record.value());
-                return record;
+                return record; //se retornar null, o registro é comitado e não é enviado ao @KafkaListener
             }
         };
     }
