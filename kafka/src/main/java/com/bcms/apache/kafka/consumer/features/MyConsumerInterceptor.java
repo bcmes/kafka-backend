@@ -18,11 +18,17 @@ public class MyConsumerInterceptor {
 
     //implementando RecordInterceptor
     public RecordInterceptor<String, String> recordInterceptor() {
-        return new RecordInterceptor<String, String>() {
+        return new RecordInterceptor<String, String>() { //há outros métodos úteis...
             @Override
             public ConsumerRecord<String, String> intercept(ConsumerRecord<String, String> record, Consumer<String, String> consumer) {
                 log.info("Interceptamos o registro [{}] antes do @KafkaListener", record.value());
                 return record; //se retornar null, o registro é comitado e não é enviado ao @KafkaListener
+            }
+
+            @Override
+            public void afterRecord(ConsumerRecord<String, String> record, Consumer<String, String> consumer) {
+                log.info("Interceptamos o registro [{}] após do @KafkaListener", record.value());
+                RecordInterceptor.super.afterRecord(record, consumer);
             }
         };
     }
