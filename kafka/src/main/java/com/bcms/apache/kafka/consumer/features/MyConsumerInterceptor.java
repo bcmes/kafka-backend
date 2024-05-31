@@ -17,7 +17,7 @@ public class MyConsumerInterceptor {
     private final Logger log = LoggerFactory.getLogger(MyConsumerInterceptor.class);
 
     //implementando RecordInterceptor
-    public RecordInterceptor<String, String> recordInterceptor() {
+    public RecordInterceptor<String, String> recordInterceptor() { //tambem existe o BatchInterceptor
         return new RecordInterceptor<String, String>() { //há outros métodos úteis...
             @Override
             public ConsumerRecord<String, String> intercept(ConsumerRecord<String, String> record, Consumer<String, String> consumer) {
