@@ -11,7 +11,7 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.listener.RecordInterceptor;
 
 
-@Configuration
+//@Configuration
 public class MyConsumerInterceptor {
 
     private final Logger log = LoggerFactory.getLogger(MyConsumerInterceptor.class);

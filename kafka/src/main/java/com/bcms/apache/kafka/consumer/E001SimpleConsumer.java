@@ -21,10 +21,10 @@ public class E001SimpleConsumer {
      * id = define o group-id, nome do container e prefix do nome da thread deste listener.
      * Obs.: O 'consumer' só consome mensagens publicadas após sua 'subscrição no grupo', por padrão.
      */
-    @KafkaListener(id = "groupA", topics = "topic1")
-    public void listen(String input) {
-        log.info("O @KafkaListener recebeu a mensagem [{}]", input);
-    }
+//    @KafkaListener(id = "groupA", topics = "topic1")
+//    public void listen(String input) {
+//        log.info("O @KafkaListener recebeu a mensagem [{}]", input);
+//    }
 
     /**
      * Para aumentar a taxa de processamento de mensagens de um único tópico e grupo:
@@ -63,6 +63,14 @@ public class E001SimpleConsumer {
 //                .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
 //                .build();
 //    }
+
+    /**
+     * Validação do payload do listener
+     */
+    @KafkaListener(id = "groupA", topics = "topic1")
+    public void listen(MyKafkaPayload input) {
+        log.info("O @KafkaListener recebeu a mensagem [{}]", input);
+    }
 }
 
 //existe um RecordInterceptor para os consumidores, mas tou sem ideia de para que poderia usa-lo no momento !

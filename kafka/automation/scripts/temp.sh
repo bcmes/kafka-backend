@@ -1,5 +1,5 @@
 # Enviando uma mensagem e sua key
-echo 'test01:{"name":"Bruno", "favorite_color":"Blue"}' | docker exec -i broker \
+echo 'test01:{"name":"Bruno", "age":41}' | docker exec -i broker \
 opt/kafka/bin/kafka-console-producer.sh \
 --broker-list localhost:9092 \
 --property parse.key=true \

@@ -29,19 +29,19 @@ public class E001GenerateTopic {
     /**
      * Registrando vários tópicos de uma vez.
      */
-    @Bean
-    public KafkaAdmin.NewTopics topics456() {
-        return new KafkaAdmin.NewTopics(
-                TopicBuilder.name("topic01")
-                        .partitions(3)
-                        .build(),
-                TopicBuilder.name("topic02")
-                        .partitions(3)
-                        .build(),
-                TopicBuilder.name("topic03")
-                        .partitions(3)
-                        .build());
-    }
+//    @Bean
+//    public KafkaAdmin.NewTopics topics456() {
+//        return new KafkaAdmin.NewTopics(
+//                TopicBuilder.name("topic01")
+//                        .partitions(3)
+//                        .build(),
+//                TopicBuilder.name("topic02")
+//                        .partitions(3)
+//                        .build(),
+//                TopicBuilder.name("topic03")
+//                        .partitions(3)
+//                        .build());
+//    }
 
     /**
      * Registrando um bean KafkaAdmin
