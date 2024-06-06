@@ -1,18 +1,22 @@
 package com.bcms.apache.kafka.consumer;
 
 import com.bcms.apache.kafka.producer.E001SimpleProducer;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.UUID;
 
 @Component
+@Validated
 public class E001SimpleConsumer {
 
     private final Logger log = LoggerFactory.getLogger(E001SimpleConsumer.class);
@@ -68,7 +72,7 @@ public class E001SimpleConsumer {
      * Validação do payload do listener
      */
     @KafkaListener(id = "groupA", topics = "topic1")
-    public void listen(MyKafkaPayload input) {
+    public void listen(@Valid MyKafkaPayload input) {
         log.info("O @KafkaListener recebeu a mensagem [{}]", input);
     }
 }

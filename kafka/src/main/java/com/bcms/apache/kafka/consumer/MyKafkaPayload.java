@@ -1,3 +1,9 @@
 package com.bcms.apache.kafka.consumer;
 
-public record MyKafkaPayload(String name, Integer age) { }
+import jakarta.validation.constraints.NotNull;
+
+public record MyKafkaPayload(
+        String name,
+        @NotNull
+        Integer age
+) { }
