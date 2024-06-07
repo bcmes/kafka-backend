@@ -8,10 +8,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.listener.KafkaListenerErrorHandler;
 import org.springframework.kafka.listener.RecordInterceptor;
 
 
-//@Configuration
+@Configuration
 public class MyConsumerInterceptor {
 
     private final Logger log = LoggerFactory.getLogger(MyConsumerInterceptor.class);
@@ -34,11 +35,20 @@ public class MyConsumerInterceptor {
     }
 
     //vai funcionar como global para todos os @KafkaListener, vc informando ou não a propriedade do @KafkaListener(containerFactory = "kafkaListenerContainerFactory")
+//    @Bean
+//    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(ConsumerFactory<String, String> consumerFactory) {
+//        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+//        factory.setConsumerFactory(consumerFactory);
+//        factory.setRecordInterceptor(recordInterceptor());
+//        return factory;
+//    }
+
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(ConsumerFactory<String, String> consumerFactory) {
-        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(consumerFactory);
-        factory.setRecordInterceptor(recordInterceptor());
-        return factory;
+    public KafkaListenerErrorHandler validationErrorHandler() {
+        return (m, e) -> {
+            //em caso de erro a mensagem é comitada.
+            log.info("Ocorreu o seguinte erro ao deserializar a mensagem.: {}", e.getCause().getLocalizedMessage());
+            return null; //essa resposta pode ser uasada por um @SendTo
+        };
     }
 }

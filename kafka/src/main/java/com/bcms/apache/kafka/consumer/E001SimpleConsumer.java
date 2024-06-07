@@ -71,7 +71,7 @@ public class E001SimpleConsumer {
     /**
      * Validação do payload do listener
      */
-    @KafkaListener(id = "groupA", topics = "topic1")
+    @KafkaListener(id = "groupA", topics = "topic1", errorHandler = "validationErrorHandler")
     public void listen(@Valid MyKafkaPayload input) {
         log.info("O @KafkaListener recebeu a mensagem [{}]", input);
     }
