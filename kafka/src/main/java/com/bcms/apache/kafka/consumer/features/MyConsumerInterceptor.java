@@ -10,6 +10,10 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.listener.KafkaListenerErrorHandler;
 import org.springframework.kafka.listener.RecordInterceptor;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.support.MessageBuilder;
+
+import java.util.UUID;
 
 
 @Configuration
@@ -48,7 +52,13 @@ public class MyConsumerInterceptor {
         return (m, e) -> {
             //em caso de erro a mensagem é comitada.
             log.info("Ocorreu o seguinte erro ao deserializar a mensagem.: {}", e.getCause().getLocalizedMessage());
-            return null; //essa resposta pode ser uasada por um @SendTo
+//            return null; //essa resposta pode ser uasada por um @SendTo
+            return MessageBuilder.withPayload(m.getPayload().toString())
+                    .setHeader(KafkaHeaders.TOPIC, "topic3")
+                    .setHeader(KafkaHeaders.KEY, UUID.randomUUID().toString())
+                    .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
+                    .setHeader("someOtherHeader", "someValue")
+                    .build();
         };
     }
 }

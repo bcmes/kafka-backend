@@ -1,13 +1,11 @@
 package com.bcms.apache.kafka.consumer;
 
-import com.bcms.apache.kafka.producer.E001SimpleProducer;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
@@ -69,11 +67,27 @@ public class E001SimpleConsumer {
 //    }
 
     /**
-     * Validação do payload do listener
+     * Validação do payload do listener e tratamento de erros
      */
+//    @KafkaListener(id = "groupA", topics = "topic1", errorHandler = "validationErrorHandler")
+//    public void listen(@Valid MyKafkaPayload input) {
+//        log.info("O @KafkaListener recebeu a mensagem [{}]", input);
+//    }
+
+    /**
+     * Se o listener retornar, o retorno é enviado para o tópico do @SendTo
+     *
+     */
+    @SendTo //se um erro ocorrer na deserializacao, a mensagem de errada é comitada, e o errorHandler captura o erro, e se ele responder uma mensagem, ela é dada para o @SendTo fazer o envio..
     @KafkaListener(id = "groupA", topics = "topic1", errorHandler = "validationErrorHandler")
-    public void listen(@Valid MyKafkaPayload input) {
+    public Message<String> listen(@Valid MyKafkaPayload input) {
         log.info("O @KafkaListener recebeu a mensagem [{}]", input);
+        return MessageBuilder.withPayload("any-paylod")
+                .setHeader(KafkaHeaders.TOPIC, "topic2")
+                .setHeader(KafkaHeaders.KEY, UUID.randomUUID().toString())
+                .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
+                .setHeader("someOtherHeader", "someValue")
+                .build();
     }
 }
 
