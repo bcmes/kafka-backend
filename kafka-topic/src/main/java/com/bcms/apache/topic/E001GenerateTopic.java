@@ -1,6 +1,5 @@
-package com.bcms.apache.kafka.configures;
+package com.bcms.apache.topic;
 
-import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
@@ -20,8 +19,8 @@ public class E001GenerateTopic {
 //    @Bean
 //    public NewTopic topic1() {
 //        return TopicBuilder.name("topic3")
-//                .partitions(10)
-//                .replicas(1)
+//                .partitions(10) //quantidade de particoes determina a quantidade maxima de consumidores por grupo
+//                .replicas(1) //quantidade de replicas depende da quantidade de brokers
 //                .compact()
 //                .build();
 //    }
