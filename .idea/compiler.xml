@@ -11,6 +11,7 @@
         <module name="kafka" />
         <module name="kafka-consumer-validation-and-error-handler" />
         <module name="kafka-consumer-simples" />
+        <module name="kafka-producer-simples" />
         <module name="kafka-consumer-message-forwarding" />
         <module name="kafka-consumer-interceptor" />
       </profile>
@@ -24,6 +25,7 @@
       <module name="kafka-consumer-message-forwarding" options="-parameters" />
       <module name="kafka-consumer-simples" options="-parameters" />
       <module name="kafka-consumer-validation-and-error-handler" options="-parameters" />
+      <module name="kafka-producer-simples" options="-parameters" />
       <module name="kafka-topic" options="-parameters" />
     </option>
   </component>

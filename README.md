@@ -12,3 +12,4 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
 6. kafka-consumer-message-forwarding
 7. kafka-consumer-interceptor
 8. kafka-topic
+9. kafka-producer-simples
