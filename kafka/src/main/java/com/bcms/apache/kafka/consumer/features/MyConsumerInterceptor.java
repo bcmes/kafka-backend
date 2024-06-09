@@ -46,19 +46,4 @@ public class MyConsumerInterceptor {
 //        factory.setRecordInterceptor(recordInterceptor());
 //        return factory;
 //    }
-
-    @Bean
-    public KafkaListenerErrorHandler validationErrorHandler() {
-        return (m, e) -> {
-            //em caso de erro a mensagem é comitada.
-            log.info("Ocorreu o seguinte erro ao deserializar a mensagem.: {}", e.getCause().getLocalizedMessage());
-//            return null; //essa resposta pode ser uasada por um @SendTo
-            return MessageBuilder.withPayload(m.getPayload().toString())
-                    .setHeader(KafkaHeaders.TOPIC, "topic3")
-                    .setHeader(KafkaHeaders.KEY, UUID.randomUUID().toString())
-                    .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
-                    .setHeader("someOtherHeader", "someValue")
-                    .build();
-        };
-    }
 }
