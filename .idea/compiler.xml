@@ -9,6 +9,7 @@
         <module name="kafka-consumer-validation-and-error-handler" />
         <module name="kafka-consumer-simples" />
         <module name="kafka-consumer-message-forwarding" />
+        <module name="kafka-consumer-interceptor" />
         <module name="kafka-consumer-concurrency" />
         <module name="kafka" />
       </profile>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="kafka" options="-parameters" />
       <module name="kafka-consumer-concurrency" options="-parameters" />
+      <module name="kafka-consumer-interceptor" options="-parameters" />
       <module name="kafka-consumer-message-forwarding" options="-parameters" />
       <module name="kafka-consumer-simples" options="-parameters" />
       <module name="kafka-consumer-validation-and-error-handler" options="-parameters" />

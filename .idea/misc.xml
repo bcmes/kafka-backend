@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/kafka-consumer-concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-validation-and-error-handler/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-message-forwarding/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-consumer-interceptor/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

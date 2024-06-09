@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/kafka-consumer-concurrency/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka-consumer-concurrency/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-consumer-interceptor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-consumer-interceptor/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka-consumer-message-forwarding/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka-consumer-message-forwarding/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka-consumer-simples/src/main/java" charset="UTF-8" />

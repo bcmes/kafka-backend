@@ -1,4 +1,4 @@
-package com.bcms.apache.kafka.consumer.features;
+package com.bcms.apache.consumer;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -8,12 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
-import org.springframework.kafka.listener.KafkaListenerErrorHandler;
 import org.springframework.kafka.listener.RecordInterceptor;
-import org.springframework.kafka.support.KafkaHeaders;
-import org.springframework.messaging.support.MessageBuilder;
-
-import java.util.UUID;
 
 
 @Configuration
@@ -22,7 +17,7 @@ public class MyConsumerInterceptor {
     private final Logger log = LoggerFactory.getLogger(MyConsumerInterceptor.class);
 
     //implementando RecordInterceptor
-    public RecordInterceptor<String, String> recordInterceptor() { //tambem existe o BatchInterceptor
+    public RecordInterceptor<String, String> recordInterceptor() { //tambem existe um BatchInterceptor
         return new RecordInterceptor<String, String>() { //há outros métodos úteis...
             @Override
             public ConsumerRecord<String, String> intercept(ConsumerRecord<String, String> record, Consumer<String, String> consumer) {
@@ -39,11 +34,11 @@ public class MyConsumerInterceptor {
     }
 
     //vai funcionar como global para todos os @KafkaListener, vc informando ou não a propriedade do @KafkaListener(containerFactory = "kafkaListenerContainerFactory")
-//    @Bean
-//    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(ConsumerFactory<String, String> consumerFactory) {
-//        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
-//        factory.setConsumerFactory(consumerFactory);
-//        factory.setRecordInterceptor(recordInterceptor());
-//        return factory;
-//    }
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(ConsumerFactory<String, String> consumerFactory) {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory);
+        factory.setRecordInterceptor(recordInterceptor());
+        return factory;
+    }
 }
