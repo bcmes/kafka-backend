@@ -12,6 +12,7 @@ public class MyFilter implements RecordFilterStrategy<String, String> {
     private final Logger log = LoggerFactory.getLogger(MyFilter.class);
 
     //Return true if the record should be discarded.
+    //Aqui não deveria disparar exceptions, apenas liberar a mensagem para consumo ou não.
     @Override
     public boolean filter(ConsumerRecord<String, String> consumerRecord) {
         log.info("Registro filtrado {} ", consumerRecord);
