@@ -13,11 +13,13 @@
         <option value="$PROJECT_DIR$/kafka-topic/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-producer-simples/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-producer-interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-consumer-filter/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/kafka-error-handler/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/pom.xml" />
       </set>
     </option>
   </component>
