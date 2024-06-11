@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="kafka-topic" />
+        <module name="kafka-producer-template-consumer" />
         <module name="kafka-consumer-concurrency" />
         <module name="kafka-consumer-filter" />
         <module name="kafka-consumer-validation-and-error-handler" />
@@ -32,6 +33,7 @@
       <module name="kafka-consumer-validation-and-error-handler" options="-parameters" />
       <module name="kafka-producer-interceptor" options="-parameters" />
       <module name="kafka-producer-simples" options="-parameters" />
+      <module name="kafka-producer-template-consumer" options="-parameters" />
       <module name="kafka-topic" options="-parameters" />
     </option>
   </component>
