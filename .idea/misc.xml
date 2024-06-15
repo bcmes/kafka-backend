@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/kafka-consumer-filter/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-producer-template-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-producer-routing-template/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-consumer-application-events/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -12,6 +12,7 @@
         <module name="kafka-consumer-concurrency" />
         <module name="kafka-consumer-filter" />
         <module name="kafka-consumer-validation-and-error-handler" />
+        <module name="kafka-consumer-application-events" />
         <module name="kafka-producer-interceptor" />
         <module name="kafka-consumer-simples" />
         <module name="kafka-producer-simples" />
@@ -26,6 +27,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="kafka" options="-parameters" />
+      <module name="kafka-consumer-application-events" options="-parameters" />
       <module name="kafka-consumer-concurrency" options="-parameters" />
       <module name="kafka-consumer-filter" options="-parameters" />
       <module name="kafka-consumer-interceptor" options="-parameters" />
