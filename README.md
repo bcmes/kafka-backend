@@ -16,3 +16,4 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
 10. kafka-producer-interceptor
 11. kafka-consumer-filter
 12. kafka-producer-template-consumer
+13. kafka-producer-routing-template
