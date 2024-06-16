@@ -7,17 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="kafka-topic" />
-        <module name="kafka-producer-template-consumer" />
         <module name="kafka-producer-routing-template" />
         <module name="kafka-consumer-concurrency" />
         <module name="kafka-consumer-filter" />
-        <module name="kafka-consumer-validation-and-error-handler" />
-        <module name="kafka-consumer-application-events" />
         <module name="kafka-producer-interceptor" />
-        <module name="kafka-consumer-simples" />
         <module name="kafka-producer-simples" />
         <module name="kafka-consumer-message-forwarding" />
         <module name="kafka-consumer-interceptor" />
+        <module name="kafka-producer-template-consumer" />
+        <module name="kafka-consumer-validation-and-error-handler" />
+        <module name="kafka-consumer-application-events" />
+        <module name="kafka-transactional" />
+        <module name="kafka-consumer-simples" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -39,6 +40,7 @@
       <module name="kafka-producer-simples" options="-parameters" />
       <module name="kafka-producer-template-consumer" options="-parameters" />
       <module name="kafka-topic" options="-parameters" />
+      <module name="kafka-transactional" options="-parameters" />
     </option>
   </component>
 </project>
