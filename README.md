@@ -19,3 +19,4 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
 13. kafka-producer-routing-template
 14. kafka-consumer-application-events
     - Durante a operação de consumo dos registros, são disparados diversos eventos, que podem ser consumidos, veja: https://docs.spring.io/spring-kafka/reference/kafka/events.html
+    - Listener Container Properties: https://docs.spring.io/spring-kafka/reference/kafka/container-props.html
