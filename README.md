@@ -21,3 +21,4 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
     - Durante a operação de consumo dos registros, são disparados diversos eventos, que podem ser consumidos, veja: https://docs.spring.io/spring-kafka/reference/kafka/events.html
     - Listener Container Properties: https://docs.spring.io/spring-kafka/reference/kafka/container-props.html
 15. kafka-transactional
+16. kafka-consumer-transaction-batch

@@ -15,6 +15,7 @@
         <module name="kafka-consumer-message-forwarding" />
         <module name="kafka-consumer-interceptor" />
         <module name="kafka-producer-template-consumer" />
+        <module name="kafka-consumer-transaction-batch" />
         <module name="kafka-consumer-validation-and-error-handler" />
         <module name="kafka-consumer-application-events" />
         <module name="kafka-transactional" />
@@ -34,6 +35,7 @@
       <module name="kafka-consumer-interceptor" options="-parameters" />
       <module name="kafka-consumer-message-forwarding" options="-parameters" />
       <module name="kafka-consumer-simples" options="-parameters" />
+      <module name="kafka-consumer-transaction-batch" options="-parameters" />
       <module name="kafka-consumer-validation-and-error-handler" options="-parameters" />
       <module name="kafka-producer-interceptor" options="-parameters" />
       <module name="kafka-producer-routing-template" options="-parameters" />

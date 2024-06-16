@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/kafka-producer-routing-template/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-application-events/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-transactional/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-consumer-transaction-batch/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
