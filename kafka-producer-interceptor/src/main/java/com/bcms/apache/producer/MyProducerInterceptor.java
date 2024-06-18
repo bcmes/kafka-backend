@@ -25,7 +25,7 @@ public class MyProducerInterceptor implements ProducerInterceptor<String, String
 
     @Override
     public void onAcknowledgement(RecordMetadata recordMetadata, Exception e) {
-        //TODO No implementation
+        //TODO Ao receber a resposta do servidor, ou a resposta de qualquer chamada do usuário, antes do producer fazer a confirmação.
     }
 
     @Override
