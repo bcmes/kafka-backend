@@ -38,3 +38,9 @@ public class MyProducerInterceptor implements ProducerInterceptor<String, String
         //TODO No implementation
     }
 }
+/**
+ * Se você tiver vários interceptores de produtor gerenciados pelo Spring que precisem ser aplicados ao KafkaTemplate,
+ * será necessário usar o CompositeProducerInterceptor. O CompositeProducerInterceptor permite que interceptores de
+ * produtores individuais sejam adicionados em ordem. Os métodos das implementações subjacentes do ProducerInterceptor
+ * são invocados na ordem em que foram adicionados ao CompositeProducerInterceptor.
+ */
