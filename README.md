@@ -41,3 +41,4 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
     - Listener Container Properties: https://docs.spring.io/spring-kafka/reference/kafka/container-props.html
 15. kafka-transactional
 16. kafka-consumer-transaction-batch
+17. kafka-configure-type-mapping
