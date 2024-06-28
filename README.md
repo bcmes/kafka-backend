@@ -42,3 +42,5 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
 15. kafka-transactional
 16. kafka-consumer-transaction-batch
 17. kafka-configure-type-mapping
+    - produzindo e consumindo tipos diferentes para o mesmo tópico.
+    - definindo o header type, para serialização e deserialização

@@ -1,5 +1,6 @@
 package com.bcms.apache.producer;
 
+import com.bcms.apache.payload.MyOtherPayload;
 import com.bcms.apache.payload.MyPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,16 +14,31 @@ import java.util.concurrent.CompletableFuture;
 @Configuration
 public class MyProducer {
 
-    private final Logger log = LoggerFactory.getLogger(MyProducer.class);
+    private final Logger LOG = LoggerFactory.getLogger(MyProducer.class);
+    private final String topicName = "topic1";
 
     @Bean
 //    @DependsOn("myKafkaListener")
     public CompletableFuture<SendResult<String, MyPayload>> myKafkaProducer(KafkaTemplate<String, MyPayload> template) {
-        return template.send("topic1", new MyPayload("Bruno", 41)).whenComplete((SendResult, exception) -> {
+        return template.send(topicName, new MyPayload("Bruno", 41)).whenComplete((SendResult, exception) -> {
             if (exception == null) {
-                log.info("=>mensagem enviada com sucesso: {}", SendResult);
+                LOG.info("=>mensagem enviada com sucesso: {}", SendResult);
             } else {
-                log.info("=>falha no envio da mensagem: {}", exception.getLocalizedMessage());
+                LOG.info("=>falha no envio da mensagem: {}", exception.getLocalizedMessage());
+            }
+        });
+    }
+
+    /**
+     * Outro producer para o mesmo tópico com um payload diferente.
+     */
+    @Bean
+    public CompletableFuture<SendResult<String, MyOtherPayload>> myKafkaProducer2(KafkaTemplate<String, MyOtherPayload> template) {
+        return template.send(topicName, new MyOtherPayload(true, 'M')).whenComplete((SendResult, exception) -> {
+            if (exception == null) {
+                LOG.info("=>mensagem enviada com sucesso: {}", SendResult);
+            } else {
+                LOG.info("=>falha no envio da mensagem: {}", exception.getLocalizedMessage());
             }
         });
     }
