@@ -26,10 +26,10 @@ public class MyKafkaErrorHandler {
 
     @Bean
     public KafkaListenerErrorHandler validationErrorHandler2() {
-        return (m, e) -> {
+        return (message, listenerExecutionFailedException) -> {
             //em caso de erro a mensagem é comitada.
-            log.info("Ocorreu o seguinte erro ao deserializar a mensagem.: {}", e.getCause().getLocalizedMessage());
-            return MessageBuilder.withPayload(m.getPayload().toString())
+            log.info("Ocorreu o seguinte erro ao deserializar a mensagem.: {}", listenerExecutionFailedException.getCause().getLocalizedMessage());
+            return MessageBuilder.withPayload(message.getPayload().toString())
                     .setHeader(KafkaHeaders.TOPIC, "topic3")
                     .setHeader(KafkaHeaders.KEY, UUID.randomUUID().toString())
                     .setHeader(KafkaHeaders.CORRELATION_ID, UUID.randomUUID().toString())
