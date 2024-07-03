@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/kafka-transactional/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-transaction-batch/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-configure-type-mapping/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-consumer-retry/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

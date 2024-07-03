@@ -44,3 +44,4 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
 17. kafka-configure-type-mapping
     - produzindo e consumindo tipos diferentes para o mesmo tópico.
     - definindo o header type, para serialização e deserialização
+18. kafka-consumer-retry
