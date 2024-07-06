@@ -2,7 +2,7 @@ Exemplos de recursos Java, Spring e demais ferramentas relacionadas ao Backend
 ==================
 
 # Apache-Kafka
-### A ordem em que foram analisados foi:
+### A ordem em que eu analisei os recursos:
 
 1. docker-compose para uso local
    - automation/docker-compose.yml
