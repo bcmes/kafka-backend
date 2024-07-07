@@ -16,21 +16,25 @@
         <module name="kafka-consumer-interceptor" />
         <module name="kafka-producer-template-consumer" />
         <module name="kafka-consumer-transaction-batch" />
+        <module name="kafka-avro-simples" />
         <module name="kafka-consumer-validation-and-error-handler" />
         <module name="kafka-consumer-application-events" />
         <module name="kafka-transactional" />
         <module name="kafka-consumer-retry" />
         <module name="kafka-consumer-simples" />
         <module name="kafka-configure-type-mapping" />
+        <module name="avro-simples" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="avro" target="21" />
       <module name="kafka" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="kafka" options="-parameters" />
+      <module name="kafka-avro-simples" options="-parameters" />
       <module name="kafka-configure-type-mapping" options="-parameters" />
       <module name="kafka-consumer-application-events" options="-parameters" />
       <module name="kafka-consumer-concurrency" options="-parameters" />

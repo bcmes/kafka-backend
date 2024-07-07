@@ -21,10 +21,14 @@
         <option value="$PROJECT_DIR$/kafka-consumer-transaction-batch/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-configure-type-mapping/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-consumer-retry/pom.xml" />
+        <option value="$PROJECT_DIR$/avro/pom.xml" />
+        <option value="$PROJECT_DIR$/avro-simples/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka-avro-simples/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/avro/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-error-handler/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
       </set>
